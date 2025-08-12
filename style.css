@@ -1,10 +1,19 @@
+:root {
+    --primary-color: #4cafef;
+    --primary-hover: #379bd8;
+    --success-color: #4caf50;
+    --error-color: #ff4d4d;
+    --font-main: 'Arial', sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-main);
     background: linear-gradient(120deg, #89f7fe, #66a6ff);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding: 10px;
 }
 
 /* Form styling with animation */
@@ -15,7 +24,6 @@ form {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     width: 300px;
     animation: fadeIn 1.2s ease-in-out;
-    position: relative;
 }
 
 @keyframes fadeIn {
@@ -26,6 +34,13 @@ form {
 h2 {
     text-align: center;
     margin-bottom: 15px;
+}
+
+h2::before {
+    content: "📋 ";
+}
+h2::after {
+    content: " ✏️";
 }
 
 label {
@@ -44,7 +59,7 @@ input, select {
 }
 
 input:focus, select:focus {
-    border-color: #4cafef;
+    border-color: var(--primary-color);
     box-shadow: 0 0 8px rgba(76, 175, 239, 0.5);
 }
 
@@ -52,7 +67,7 @@ button {
     margin-top: 15px;
     width: 100%;
     padding: 10px;
-    background-color: #4cafef;
+    background-color: var(--primary-color);
     border: none;
     color: white;
     font-size: 16px;
@@ -62,7 +77,7 @@ button {
 }
 
 button:hover {
-    background-color: #379bd8;
+    background-color: var(--primary-hover);
     transform: scale(1.05);
 }
 
@@ -71,7 +86,7 @@ button:hover {
     position: fixed;
     top: 20px;
     right: -300px;
-    background: #4caf50;
+    background: var(--success-color);
     color: white;
     padding: 12px 20px;
     border-radius: 6px;
@@ -82,4 +97,15 @@ button:hover {
 
 .popup.show {
     right: 20px;
+}
+
+/* Extra section styling */
+#infoSection {
+    margin-top: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
