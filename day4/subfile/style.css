@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#createCardBtn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+#createCardBtn:hover {
+    background: #45a049;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.card {
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 0.4s forwards;
+}
+
+.delete-btn {
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.delete-btn:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.4s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
